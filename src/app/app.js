@@ -1,3 +1,4 @@
+//* import alerService et parseInputs car utilisé par app 
 import { inputsAreValid } from "./utils/inputs-are-valid";
 import { parseInputs } from "./utils/parse-inputs";
 export const run = (alertService, componentService) => {

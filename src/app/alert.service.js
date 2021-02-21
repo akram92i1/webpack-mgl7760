@@ -1,3 +1,4 @@
+// l'application utilise inputsAreValid module 
 import { inputsAreValid } from "./utils/inputs-are-valid";
 export class AlertService {
   constructor() {
