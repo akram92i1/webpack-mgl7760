@@ -1,0 +1,30 @@
+---
+
+- name: install npm
+  hosts: 192.168.56.102
+  remote_user: akram-ub1
+  become: false
+  tasks:
+    - name: Clone a repo with separate git directory
+      ansible.builtin.git:
+            repo: https://github.com/akram92i1/webpack-mgl7760.git
+            dest: /akram-ub1/app-proj/
+    - name: Git checkout 
+      ansible.builtin.git:
+            repo: 'https://github.com/akram92i1/webpack-mgl7760.git'
+            dest: /akram-ub1/app-proj/
+            version: sqs
+    - name: Just ensuring the repo checkout exists
+      ansible.builtin.git:
+            repo: 'https://github.com/akram92i1/webpack-mgl7760.git'
+            dest: /akram-ub1/app-proj/
+            update: no
+    - name: Git checkout
+      ansible.builtin.git:
+            repo: 'https://github.com/akram92i1/webpack-mgl7760.git'
+            dest: /akram-ub1/app-proj/
+            version: sqs
+    - name: Install packages based on package.json
+      ansible.builtin.shell: npm install
+      args:
+        chdir: /akram-ub1/app-proj/
